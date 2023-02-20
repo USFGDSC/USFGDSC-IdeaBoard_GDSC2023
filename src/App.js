@@ -1,33 +1,18 @@
 import React, { useEffect, useState } from "react";
-import "firebase/compat/auth";
+
+//CODE BREAKS IF THIS GETS DELETED
 import "firebase/compat/firestore";
-import { db } from "./firebase";
+
+import Cards from "./components/Cards";
 
 
 
 
 function App() {
-  const [documents, setDocuments] = useState([]);
-
-  useEffect(() => {
-    const unsubscribe = db.collection("Projects").onSnapshot((snapshot) => {
-      const documents = snapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-      setDocuments(documents);
-    });
-    return unsubscribe;
-  }, []);
+  
 
   return (
-    <div>
-      {documents.map((document) => (
-        <div key={document.id}>
-          <h2>{document.Name}</h2>
-        </div>
-      ))}
-    </div>
+      <Cards></Cards>
   );
 }
 
