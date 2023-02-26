@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import {db} from '../firebase'
 import Card from './Card';
 import { useState } from "react";
+import '../styles/card.css';
 
 
 const Cards = () => {
@@ -20,13 +21,16 @@ const Cards = () => {
 
   console.log(documents)
   return (
+    <div className='card-container'>
     
-    documents.map((document) => (
-        <Card key={document.id} Name={document.Name} Description={document.Description} GrpName={document.GroupName}></Card>
+    {documents.map((document) => (
+      
+        <Card className="card-container" key={document.id} Date={document.Date} Name={document.Name} Description={document.Description} GrpName={document.GroupName}></Card>
+        
       )
       
-    )
- 
+    )}
+    </div>
   )
 }
 

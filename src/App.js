@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import "firebase/compat/firestore";
 
 import Cards from "./components/Cards";
+import Header from "./components/Header";
 
 
 
@@ -12,7 +13,10 @@ function App() {
   
 
   return (
+      <>
+      <Header></Header>
       <Cards></Cards>
+      </>
   );
 }
 

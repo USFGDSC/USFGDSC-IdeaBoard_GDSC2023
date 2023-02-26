@@ -1,8 +1,16 @@
 import React from 'react'
-const Card = ({ Name, Description, GrpName}) => {
+import '../styles/card.css';
+import Like from './Like';
+
+const Card = ({ Name, Date, Description, GrpName}) => {
     
   return (
-    <div >{Name}, {Description}, {GrpName}</div>
+    <div className='card'>
+      <Like></Like>
+      <h2>{Name} | Date</h2>
+      <p>{Description}</p>
+      <p>{GrpName}</p>
+    </div>
   )
 }
 
