@@ -1,0 +1,53 @@
+.idea-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+  }
+  
+  .idea-form__label {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .idea-form__input {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    margin-left: 10px;
+    margin-top: 5px;
+    font-size: 18px;
+    width: 300px;
+    background-color: #f2f2f2;
+  }
+  
+  .idea-form__textarea {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    margin-left: 10px;
+    margin-top: 5px;
+    font-size: 18px;
+    width: 300px;
+    height: 150px;
+    background-color: #f2f2f2;
+  }
+  
+  .idea-form__button {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 20px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    width: 150px;
+  }
+  
+  .idea-form__button:hover {
+    background-color: #3e8e41;
+  }
+  
