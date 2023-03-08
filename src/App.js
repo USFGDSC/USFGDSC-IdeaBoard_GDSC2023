@@ -1,26 +1,27 @@
-import React, { useEffect, useState } from "react";
-
-//CODE BREAKS IF THIS GETS DELETED
-import "firebase/compat/firestore";
-
+import "./styles/home.scss";
+import "./styles/register.scss";
+import Login from "./components/Login";
+import Register from "./components/Register";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Cards from "./components/Cards";
-import Header from "./components/Header";
-
-
-
 
 function App() {
-  
-
   return (
-      <>
-      <Header></Header>
-      <Cards></Cards>
-      </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/">
+          <Route
+            index
+            element={
+                <Cards />
+            }
+          />
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-
-
 
 export default App;
