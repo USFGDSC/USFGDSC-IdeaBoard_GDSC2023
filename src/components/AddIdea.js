@@ -12,23 +12,39 @@ function AddIdea() {
   const [ideaDescription, setIdeaDescription] = useState('');
   const [date, setDate] = useState('');
 
+  const [rawTag, setTag] = useState('');
   const handleSubmit = async (event) => {
     event.preventDefault();
+    console.log('Idea Name:', ideaName);
+    console.log('Idea Description:', ideaDescription);
+    console.log('Date:', date);
+    
+    // Split the tag string into an array of substrings
+    const tags = rawTag.split(',').map(substring => substring.trim());
+
+    // Remove any empty substrings
+    const filteredTags = tags.filter(substring => substring !== '');
+
+
 
     // Add the form data to a Firestore collection
-    
     await db.collection('Projects').add({
       ideaName, 
       ideaDescription,
       date,
-      GroupName
+      GroupName,
+      tags: filteredTags
     });
 
     // Reset the form fields
     setIdeaName('');
     setIdeaDescription('');
     setDate('');
+
+    setTag('');
+
     
+
   }
 
   return (
@@ -54,6 +70,12 @@ function AddIdea() {
         <input type="date" value={date} onChange={(event) => setDate(event.target.value)} className="idea-form__input" />
       </label>
       <br />
+      <label className="idea-form__label">
+        Tags:
+        <input type="text" value={rawTag} onChange={(event) => setTag(event.target.value)} className="idea-form__input" />
+      </label>
+      <br />
+
       <button type="submit" className="idea-form__button">Submit</button>
     </form>
   );
