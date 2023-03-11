@@ -3,6 +3,7 @@ import {db} from '../firebase'
 import Card from './Card';
 import { useState } from "react";
 import '../styles/card.css';
+import Header from './Header';
 
 
 const Cards = () => {
@@ -19,7 +20,6 @@ const Cards = () => {
     return unsubscribe;
   }, []);
 
-  console.log(documents)
   return (
     <div className='card-container'>
     
@@ -32,6 +32,7 @@ const Cards = () => {
     )}
     </div>
   )
+
 }
 
 export default Cards
