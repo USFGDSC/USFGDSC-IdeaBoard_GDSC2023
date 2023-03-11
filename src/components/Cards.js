@@ -21,22 +21,18 @@ const Cards = () => {
   }, []);
 
   return (
-    <>
-      <Header></Header>
-      <div className="card-container">
-        {documents.map((document) => (
-          <Card
-            className="card-container"
-            key={document.id}
-            Date={document.date}
-            Name={document.ideaName}
-            Description={document.ideaDescription}
-            GrpName={document.GroupName}
-          ></Card>
-        ))}
-      </div>
-    </>
-  );
+    <div className='card-container'>
+    
+    {documents.map((document) => (
+      
+        <Card className="card-container" key={document.id} id={document.id} Date={document.date} Name={document.ideaName} Description={document.ideaDescription} GrpName={document.GroupName}></Card>
+        
+      )
+      
+    )}
+    </div>
+  )
+
 }
 
 export default Cards

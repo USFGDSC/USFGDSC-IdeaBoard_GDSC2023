@@ -7,8 +7,14 @@ import Cards from "./components/Cards";
 
 import Header from "./components/Header";
 import AddIdea from "./components/AddIdea";
+import OpenCard from "./components/OpenCard";
+
+
+
+
 import { useContext } from "react";
 import { AuthContext } from "./context/AuthContext";
+
 
 
 
@@ -28,6 +34,7 @@ function App() {
             <Route path="login" element={<Login />} />
             <Route path="register" element={<Register />} />
             <Route path="addIdea" element={<AddIdea></AddIdea>}></Route>
+            <Route path="view/:id" element={<OpenCard></OpenCard>}></Route>
           </Route>
         </Routes>
       </BrowserRouter>
