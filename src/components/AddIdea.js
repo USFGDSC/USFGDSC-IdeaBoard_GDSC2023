@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import '../styles/AddIdea.css';
 import {db} from '../firebase'
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
 
 
 function AddIdea() {
@@ -12,9 +14,6 @@ function AddIdea() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log('Idea Name:', ideaName);
-    console.log('Idea Description:', ideaDescription);
-    console.log('Date:', date);
 
     // Add the form data to a Firestore collection
     
@@ -29,6 +28,7 @@ function AddIdea() {
     setIdeaName('');
     setIdeaDescription('');
     setDate('');
+    
   }
 
   return (
