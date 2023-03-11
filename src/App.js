@@ -27,6 +27,7 @@ function App() {
           />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
+          <Route path="addIdea" element={<AddIdea></AddIdea>}></Route>
         </Route>
       </Routes>
     </BrowserRouter>

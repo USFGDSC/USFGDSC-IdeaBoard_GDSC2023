@@ -5,6 +5,8 @@ import {db} from '../firebase'
 
 function AddIdea() {
   const [ideaName, setIdeaName] = useState('');
+  const [GroupName, setGroupName] = useState('');
+
   const [ideaDescription, setIdeaDescription] = useState('');
   const [date, setDate] = useState('');
 
@@ -34,6 +36,12 @@ function AddIdea() {
         Idea Name:
         <input type="text" value={ideaName} onChange={(event) => setIdeaName(event.target.value)} className="idea-form__input" />
       </label>
+      <br/>
+      <label className="idea-form__label">
+        Group Name:
+        <input type="text" value={GroupName} onChange={(event) => setGroupName(event.target.value)} className="idea-form__input" />
+      </label>
+     
       <br />
       <label className="idea-form__label">
         Idea Description:
