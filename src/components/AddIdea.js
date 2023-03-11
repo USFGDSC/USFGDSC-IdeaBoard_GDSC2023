@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import '../styles/AddIdea.css';
 import {db} from '../firebase'
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
 
 
 function AddIdea() {
@@ -23,6 +25,8 @@ function AddIdea() {
     // Remove any empty substrings
     const filteredTags = tags.filter(substring => substring !== '');
 
+
+
     // Add the form data to a Firestore collection
     await db.collection('Projects').add({
       ideaName, 
@@ -36,7 +40,11 @@ function AddIdea() {
     setIdeaName('');
     setIdeaDescription('');
     setDate('');
+
     setTag('');
+
+    
+
   }
 
   return (

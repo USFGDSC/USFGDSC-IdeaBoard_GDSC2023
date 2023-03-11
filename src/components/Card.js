@@ -1,6 +1,8 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import '../styles/card.css';
 import Like from './Like';
+
 
 
 const Card = ({ Name, Date, Description, GrpName, Tags}) => {
@@ -15,15 +17,17 @@ const Card = ({ Name, Date, Description, GrpName, Tags}) => {
     ));
   }
 
-
   return (
+   
     <div className='card'>
-      {/* <Like></Like> */}
-      <h2>{Name} | {Date}</h2>
-      <p>{Description}</p>
-      <p>{GrpName}</p>
-      {tagElements}
-    </div>
+      <Like></Like>
+      <Link  to={`/view/${id}`} >
+        <h2>{Name} | {Date}</h2>
+        <p>{Description}</p>
+        <p>{GrpName}</p>
+        {tagElements}
+      </Link>
+    </div> 
   )
 }
 
