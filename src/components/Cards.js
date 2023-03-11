@@ -25,7 +25,7 @@ const Cards = () => {
     
     {documents.map((document) => (
       
-        <Card className="card-container" key={document.id} Date={document.date} Name={document.ideaName} Description={document.ideaDescription} GrpName={document.GroupName}></Card>
+        <Card className="card-container" key={document.id} Date={document.date} Name={document.ideaName} Description={document.ideaDescription} GrpName={document.GroupName} Tags={document.tags}></Card>
         
       )
       
