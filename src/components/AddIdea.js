@@ -22,6 +22,7 @@ function AddIdea() {
       ideaName, 
       ideaDescription,
       date,
+      GroupName
     });
 
     // Reset the form fields
